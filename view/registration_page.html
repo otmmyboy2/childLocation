@@ -1,0 +1,132 @@
+<!DOCTYPE html>                <!-- Registration Page, contains the registration form. -->
+<html ng-app>
+	<head>
+	<title>Registration</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link rel="stylesheet" type = "text/css" href="../resources/materialize/css/materialize.css"/>
+
+  <link rel="stylesheet" type = "text/css" href="../resources/materialize/css/style-horizontal.css"/>
+  <link rel="stylesheet" type = "text/css" href="../resources/materialize/css/page-center.css"/>
+  <link rel="stylesheet" type = "text/css" href="../resources/materialize/css/perfect-scrollbar.css"/>
+  <link rel="stylesheet" type = "text/css" href="../resources/materialize/css/prism.css"/>
+   <link rel="stylesheet" type = "text/css" href="../resources/materialize/css/style.css"/>
+   
+
+  <link rel="icon" href="../resources/images/butterfly.ico">
+	
+  </head>
+	
+  <body class="cyan" style="padding-right:4%;padding-left:4%;">
+  <!-- Start Page Loading -->
+  <div id="loader-wrapper">
+      <div id="loader"></div>        
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+  </div>
+  <!-- End Page Loading -->
+
+
+
+  
+  <div id="registerPage" class="row">
+    <div class="col s12 z-depth-4 card-panel">
+      <form class="register-form" method='POST' action='../controller/registerBackend.php' id='registerForm'>
+        <div class="row">
+          <div class="input-field col s12 center">
+            <img src="../resources/images/logo.png" alt="" height="122" width="122">
+            <h4>Register</h4>
+            <p class="center">Join to our community now !</p>
+          </div>
+        </div>
+        <div class="row margin">
+          <div class="input-field col s12">
+            <i class="mdi-social-person-outline prefix"></i>
+            <input id="username" name="username" type="text" placeholder='Username' required pattern=".{3,}" title="3 characters minimum for Username">
+          </div>
+        </div>
+        <div class="row margin">
+          <div class="input-field col s12">
+            <i class="mdi-communication-email prefix"></i>
+            <input id="email" name="email" type="email" placeholder='Email' required title="anything@anything is a valid email.">
+          </div>
+           <div class="row margin">
+          <div class="input-field col s12">
+            <i class="mdi-action-home prefix"></i>
+            <input id="address" name="address" type="text" placeholder='Address' pattern=".{6,}" required title="6 characters minimum">
+          </div>
+        </div>
+        <div class="row margin">
+          <div class="input-field col s12">
+            <i class="mdi-action-lock-outline prefix"></i>
+            <input id="password" name="password"type="password" placeholder='Password' pattern=".{6,}" required title="6 characters minimum">
+          </div>
+        </div>
+        <div class="row margin">
+          <div class="input-field col s12">
+            <i class="mdi-action-lock-outline prefix"></i>
+            <input id="password_again" name="password_again"  type="password" placeholder='Password Again' required title="6 characters minimum">
+          </div>
+        </div>
+
+        <div onchange="childChecked()">
+          <p style="padding-left: 5%;">   <!--Added padding from the left side for the radio buttons.-->
+            <input class="with-gap" name="privilege" type="radio" id="parent" checked=true/>
+            <label for="parent" style="margin-right: 30%;padding-right: 2%;">Parent</label>   <!--Changed &nbsp to padding to ensure same view across browsers.-->
+            <input class="with-gap" name="privilege" type="radio" id="child"/>      <!--Changed the name of both radio buttons to the same name so that now when one is selected the other deselects.-->
+            <label for="child" style="padding-right: 2%;">Child</label>
+            <input id="isChild" name="isChild" type="text" value='N' style="display: none">
+
+          </p>
+        </div>
+
+        <div class="row margin">
+          <div class="input-field col s12" id="parent_code" style="display: none">
+            <i class="mdi-action-face-unlock prefix"></i>
+            <input id="code" name="code" type="number" placeholder='Parent Code' min="1000" max="9999">
+          </div>
+
+        <script language="javascript" type="text/javascript">
+          function childChecked(){
+                if(document.getElementById('child').checked) {
+                  document.getElementById("parent_code").style.display = 'block';
+                  document.getElementById("isChild").value = 'Y';
+                  document.getElementById("code").required = true;
+                }else if(document.getElementById('parent').checked){
+                  document.getElementById("parent_code").style.display = 'none';
+                  document.getElementById("isChild").value = 'N';
+                  document.getElementById("code").required = false;
+                }
+          }
+         </script>           
+
+        <div class="row">
+          <div class="input-field col s12">       
+            <a><button type='submit' value='Register' class="btn waves-effect waves-light col s12">Register Now</button></a>  
+          </div>
+          <div class="input-field col s12">
+            <p class="margin center medium-small sign-up">Already have an account? <a href="login_page.html">Login</a></p>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!--================================================
+    Scripts
+    ================================================ -->
+<!--materialize js-->
+  <script type="text/javascript" src="../resources/materialize/js/materialize.js"></script>
+  <!--prism-->
+  <script type="text/javascript" src="../resources/materialize/js/prism.js"></script>
+  <!--scrollbar-->
+  <script type="text/javascript" src="../resources/materialize/js/perfect-scrollbar.min.js"></script>
+
+  <!--plugins.js - Some Specific JS codes for Plugin Settings-->
+  <script type="text/javascript" src="../resources/materialize/js/plugins.js"></script>
+  <!-- jQuery Library -->
+  <script type="text/javascript" src="../resources/materialize/js/jquery-1.11.2.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>                 <!-- Login Page, contains the login form. -->
+<html ng-app>
+	<head>
+	<title>login</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link rel="stylesheet" type = "text/css" href="../resources/materialize/css/materialize.css"/>
+
+  <link rel="stylesheet" type = "text/css" href="../resources/materialize/css/style-horizontal.css"/>
+  <link rel="stylesheet" type = "text/css" href="../resources/materialize/css/page-center.css"/>
+  <link rel="stylesheet" type = "text/css" href="../resources/materialize/css/perfect-scrollbar.css"/>
+  <link rel="stylesheet" type = "text/css" href="../resources/materialize/css/prism.css"/>
+  <link rel="stylesheet" type = "text/css" href="../resources/materialize/css/style.css"/>
+  <link rel="icon" href="../resources/images/butterfly.ico">
+	</head>
+		<body class="cyan">
+  <!-- Start Page Loading -->
+  <div id="loader-wrapper">
+      <div id="loader"></div>        
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+  </div>
+  <!-- End Page Loading -->
+
+  <div id="login-page" class="row">
+    <div class="col m12 card-panel">
+      <form class="login-form" method='POST' action='../controller/loginBackend.php' id='loginForm'>
+        <div class="row">
+          <div class="input-field col s12 center">
+            <img src="../resources/images/logo.png" alt="" class="responsive-img valign profile-image-login">
+            <h4>Locate My Child</h4>
+          </div>
+        </div>
+        <div class="row margin">
+          <div class="input-field col s12">
+            <i class="mdi-social-person-outline prefix"></i>
+            <input id="username" type="text" name='username' placeholder='Username' >
+            <!-- <label for="username" class="center-align">Username</label>-->
+          </div>
+        </div>
+        <div class="row margin">
+          <div class="input-field col s12">
+            <i class="mdi-action-lock-outline prefix"></i>
+            <input id="password" type="password" name='password' placeholder='Password'>
+          </div>
+        </div>
+        <!--<div class="row">          
+          <div class="input-field col s12 m12 l12  login-text">
+              <input type="checkbox" id="remember-me" />
+              <label for="remember-me">Remember me</label>
+          </div>
+        </div>-->
+        <div class="row">
+          <div class="input-field col s12">
+            <a><button type='submit' value='Login' class="btn waves-effect waves-light col s12">Login</button></a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <p class="margin center medium-small "><a href="registration_page.html">Register Now!</a></p>
+          </div>
+          <!--<div class="input-field col s6 m6 l6">
+              <p class="margin right-align medium-small"><a href="page-forgot-password.html">Lost password?</a></p>
+          </div>-->       
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+  <!--================================================
+    Scripts
+    ================================================ -->
+<!--materialize js-->
+  <script type="text/javascript" src="../resources/materialize/js/materialize.js"></script>
+  <!--prism-->
+  <script type="text/javascript" src="../resources/materialize/js/prism.js"></script>
+  <!--scrollbar-->
+  <script type="text/javascript" src="../resources/materialize/js/perfect-scrollbar.min.js"></script>
+
+  <!--plugins.js - Some Specific JS codes for Plugin Settings-->
+  <script type="text/javascript" src="../resources/materialize/js/plugins.js"></script>
+  <!-- jQuery Library -->
+  <script type="text/javascript" src="../resources/materialize/js/jquery-1.11.2.min.js"></script>
+</body>
+</html>
